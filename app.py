@@ -1,6 +1,6 @@
 from flask import Flask, request
 
-app = Flask(_name_)
+app = Flask(_name)  # Correto: __name_ com DOIS underscores
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
@@ -15,5 +15,5 @@ def webhook():
         print("Mensagem recebida:", data)
         return "OK", 200
 
-if _name_ == "_main_":
+if _name_ == "_main":  # Correto: __name_ com DOIS underscores
     app.run(host='0.0.0.0', port=5000)
